@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter&display=swap">
   <link rel="stylesheet" type="text/css" href="/../markdowngeneration/style.css">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  
 </head>
 <block class="block">
   <h4>Folders 📁</h4>
@@ -98,5 +99,7 @@ directoryLinks.forEach(function(link, index) {
       .catch(error => {
         console.error('Error loading Markdown file:', error);
       });
+      
   </script>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src data:; connect-src 'self'">
 </html>

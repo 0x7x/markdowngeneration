@@ -48,7 +48,7 @@ body {
     text-align: left;
     max-width: 800px; /* Adjust this value to your desired maximum width */
     margin: 0 auto; /* Center the article horizontally */
-
+    width: 100%;
 }
 
 .markdown-content img {
@@ -64,6 +64,7 @@ body {
 .markdown-content hr {
     margin-top: 50px;
     margin-bottom: 50px;
+    
 }
 
 .x1 {
@@ -73,6 +74,7 @@ body {
     padding-bottom: 30px;
     font-style: normal;
     border-style: dashed;
+    width: 100%;
 }
 
 blockquote p {

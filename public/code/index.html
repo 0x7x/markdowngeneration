@@ -25,8 +25,8 @@
     console.log(pageName)
     console.log(pathClean)
     document.title = cleanPath;
-    document.getElementById('markdown-content').innerHTML = '<h1 class="x1">' + 'Markdown Viewer' + '</x1>';
-      var segments = cleanPath.split('/').filter(Boolean); // Split the path and remove empty segments
+    //document.getElementById('markdown-content').innerHTML = '<h1 class="x1">' + 'Markdown Viewer' + '</x1>';
+    var segments = cleanPath.split('/').filter(Boolean); // Split the path and remove empty segments
 
 // Create an anchor element for each path segment
 var directoryLinks = [];
@@ -52,8 +52,8 @@ directoryLinks.forEach(function(link, index) {
   </script>
   <body>
     <div id="markdown-content" class="markdown-content">
-    <h1 class="x1">servicetest</h1>
-      <ul><li><a href="bub tech.html">bub tech.html</a></li><li><a href="code.html">code.html</a></li>
+    <h1 class="x1">public/code</h1>
+      <ul><li><a href="bub tech.html">bub tech.html</a></li><li><a href="code.html">code.html</a></li><li><a href="index.html">index.html</a></li>
       </ul>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/marked@2.0.0/marked.min.js"></script>

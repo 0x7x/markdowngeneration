@@ -1,4 +1,4 @@
-# https://0x7x.github.io/markdowngeneration/public
+# public.mcnamee.dev/public/
 
 
 <center><span style="font-size: 24px;">Helpful Things to Paste in Obsidian</span></center>

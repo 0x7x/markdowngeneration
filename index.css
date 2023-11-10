@@ -1,0 +1,158 @@
+html {
+  background-color: rgb(28, 33, 39);
+  overflow-x: hidden;
+}
+
+
+a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    outline: none;
+  }
+  
+
+body { 
+ text-align: center;
+ background-color: rgb(28, 33, 39);
+ color: white;
+ font-family: 'Inter', sans-serif;
+ width: 100%;
+ height: 100%;
+}
+
+.block {
+  color: aliceblue;
+  text-align: center;
+  width: 100%;
+  height: 70px;
+  background-color: rgb(24, 28, 32);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.markdown-content ul {
+  text-decoration: none;
+  color: rgb(62, 180, 191);
+}
+
+
+.block h4 {
+  padding-left: 10%;
+  padding-right: 10%;
+  text-decoration: none;
+}
+
+.block h4 a {
+  padding-left: 5px;
+  padding-right: 5px;
+  text-decoration: none;
+  color: rgb(62, 180, 191);
+}
+
+.markdown-content {
+    display: inline-block;
+    text-align: left;
+    max-width: 800px; /* Adjust this value to your desired maximum width */
+    margin: 0 auto; /* Center the article horizontally */
+    width: 100%;
+}
+
+.markdown-content img {
+    max-width: 100%; /* Ensure images don't exceed the width of their container */
+    height: auto; /* Maintain the aspect ratio when resizing */
+    display: block; /* Remove any extra space below the image */
+    margin: 0 auto; /* Center the image horizontally */
+    padding-top: 70px;
+    padding-bottom: 30px;
+
+}
+
+.markdown-content hr {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    
+}
+
+.x1 {
+    font-size: 3em;
+    margin-top: 80px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    font-style: normal;
+    border-style: dashed;
+    width: 100%;
+}
+
+blockquote p {
+    
+    color: rgb(62, 180, 191);
+    margin-left: 20px;
+    font-family: 'Inter', sans-serif;
+}
+
+blockquote::before {
+    content: "|"; /* Replace 'Text Here' with your desired text */
+    color: rgb(0, 191, 255);
+    text-align: left;
+    position: absolute;
+    font-style: normal;
+
+  }
+
+
+
+
+code {
+    background-color: rgb(30, 30, 30);
+    color: white; /* Text color for the code */
+    display: block;
+    padding: 10px; /* Adjust the padding to control the size of the code boxes */
+    border: 1px solid #ccc; /* Border styles */
+    border-radius: 5px; /* Rounded corners */
+    font-family: monospace; /* Ensure a monospaced font for code blocks */
+    white-space: pre-wrap; /* Preserve line breaks and wrap text */
+    overflow: auto; /* Enable scrolling for long code blocks */
+    margin-bottom: 20px; /* Add spacing between code blocks */
+    
+}
+
+
+.code-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    
+  }
+
+  /* Style for the copy button */
+  .copy-button {
+    position: absolute;
+    top: 19px; /* Adjust the top position as needed */
+    right: 10px; /* Adjust the right position as needed */
+    background:  rgba(62, 180, 191, 0.7);
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 14px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+  }
+
+  .copy-button:hover {
+    background-color: rgba(62, 180, 191, 1);
+  }
+
+
+
+
+h1 {
+   text-align: center;
+    
+}

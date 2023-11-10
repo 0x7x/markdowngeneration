@@ -1,4 +1,4 @@
-# https://0x7x.github.io/markdowngeneration/Readme
+# https://0x7x.github.io/markdowngeneration/public
 
 
 <center><span style="font-size: 24px;">Helpful Things to Paste in Obsidian</span></center>

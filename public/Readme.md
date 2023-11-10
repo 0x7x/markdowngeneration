@@ -22,7 +22,8 @@
 <hr>
  
 > Center Text
-  
+
+
 ```
 <center>Text Here</center>
 ```

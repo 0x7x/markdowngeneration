@@ -4,8 +4,9 @@
 <center><span style="font-size: 24px;">Helpful Things to Paste in Obsidian</span></center>
 
 <hr>
-  
+
 > New Page Page Break
+
 
 ```
 <div style="page-break-after: always;"></div>
@@ -20,7 +21,8 @@
 ```
 
 <hr>
- 
+
+
 > Center Text
 
 

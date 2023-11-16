@@ -124,3 +124,10 @@ $$
 w = 150 \, m
 $$
 Calculate l using the maximum value of w.
+$$
+l = \frac{900 - 3(150)}{2} = 225 \, m
+$$
+Calculate the maximum total area using the values of l and w.
+$$
+A_{max} = 225 \cdot 150 = 33,750 \, m^2
+$$

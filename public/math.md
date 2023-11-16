@@ -30,8 +30,7 @@ $$Let \, u = e^x \, and \, v = \tan(x^2 + 4)
 u' = e^x \, and \, v' = \sec^2(x^2 + 4) \cdot 2x = 2x(\tan^2(x^2 + 4) + 1)
 
 \frac{d}{dx} \left( \frac{e^x}{\tan(x^2 + 4)} \right) = \frac{e^x \cdot \tan(x^2 + 4) - e^x \cdot 2x(\tan^2(x^2 + 4) + 1)}{\tan^2(x^2 + 4)}
-\frac{d}{dx} \left( \frac{e^x}{\tan(x^2 + 4)} \right) = \frac{e^x}{\tan(x^2 + 4)} - \frac{2x(\tan^2(x^2 + 4) + 1)e^x}{\tan^2(x^2 + 4)}
-$$
+\frac{d}{dx} \left( \frac{e^x}{\tan(x^2 + 4)} \right) = \frac{e^x}{\tan(x^2 + 4)} - \frac{2x(\tan^2(x^2 + 4) + 1)e^x}{\tan^2(x^2 + 4)}$$
 
 
 You are constructing an open-top box with a square base for your dog to sleep in. You need a box with a volume of 4ft^3. Find the dimensions of the box that will minimize the amount of material used. Use x to represent the side length of the square base and ℎh to represent the height of the box."

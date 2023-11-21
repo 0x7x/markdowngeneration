@@ -33,4 +33,4 @@ This animation can be found at https://public.mcnamee.dev/attatchments/wave.gif
 
 (I don't think it displays in pdf format)
 
-![[wave.gif |500 ]]
+![[wave.gif]]

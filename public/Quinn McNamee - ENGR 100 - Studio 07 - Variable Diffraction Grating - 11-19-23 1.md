@@ -29,8 +29,6 @@
 # <center>Animation</center>
 ---
 
-This animation can be found at https://public.mcnamee.dev/attatchments/wave.gif
-
-(I don't think it displays in pdf format)
+(not sure if it displays in pdf format)
 
 ![[wave.gif]]

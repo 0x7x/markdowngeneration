@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>testing</title>
+  <script src="https://cdn.jsdelivr.net/npm/marked@2.0.0/marked.min.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter&display=swap">
+  <link rel="stylesheet" type="text/css" href="/../style.css">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+  
+</head>
+<block class="block">
+  <h4>Folders 📁</h4>
+  <h4 id="directory-path"></h4>
+  <h4>Settings ⚙️</h4>
+</block>
+<body>
+  <div id="markdown-content" class="markdown-content">
+    hello meow
+  </div>
+
+  <script>
+
+    path = window.location.pathname;
+    cleanPath = decodeURI(path)
+    console.log(cleanPath)
+    console.log(path)
+    var pageName = path.split('/').pop().replace('.html', ''); // Assuming the file extension is ".md"
+    var pageNameClean = decodeURI(path.split('/').pop().replace('.html', '')); // Assuming the file extension is ".md"
+    // Set the page title and display the title within the content
+    document.title = pageNameClean;
+    document.getElementById('markdown-content').innerHTML = '<h1 class="x1">' + pageNameClean + '</x1>';
+      var segments = cleanPath.split('/').filter(Boolean); // Split the path and remove empty segments
+
+// Create an anchor element for each path segment
+var directoryLinks = [];
+var fullPath = '';
+for (var i = 0; i < segments.length; i++) {
+  fullPath += '/' + segments[i];
+  var segmentLink = document.createElement('a');
+  segmentLink.textContent = segments[i];
+  segmentLink.href = fullPath;
+  directoryLinks.push(segmentLink);
+}
+
+// Set the text content and links for each path segment
+var directoryPathElement = document.getElementById('directory-path');
+directoryLinks.forEach(function(link, index) {
+  directoryPathElement.appendChild(link);
+  if (index < segments.length - 1) {
+    directoryPathElement.appendChild(document.createTextNode('/'));
+  }
+});
+    // Now, fetch and render the Markdown content
+    fetch(pageName + '.md') // Use the pageName to fetch the .md file
+  .then(response => response.text())
+  .then(markdown => {
+    // Manually replace `$\quad$` with &emsp;
+    markdown = markdown.replace(/\$\s*\\quad\s*\$/g, '&emsp;');
+
+    // Replace image references with the correct paths and sizes
+    markdown = markdown.replace(/!\[\[([^\]|\n]+?)(?:\s*\|\s*(\d*))?\s*]]/g, function(match, p1, p2) {
+      const imagePath = '/../attachments/' + p1;
+      const width = p2 ? ` width="${p2}"` : '';
+      return `<img src="${imagePath}" alt="Image"${width}>`;
+    });
+
+    // Parse and render the modified Markdown content
+    document.getElementById('markdown-content').innerHTML += marked(markdown);
+
+        const codeBlocks = document.querySelectorAll('.markdown-content pre code');
+        codeBlocks.forEach((codeBlock) => {
+          const codeContainer = codeBlock.parentElement;
+          const copyButtonContainer = document.createElement('div');
+          copyButtonContainer.className = 'code-container';
+
+          codeContainer.parentElement.replaceChild(copyButtonContainer, codeContainer);
+          copyButtonContainer.appendChild(codeContainer);
+
+          const copyButton = document.createElement('button');
+          copyButton.className = 'copy-button';
+          copyButton.textContent = 'Copy';
+          copyButtonContainer.appendChild(copyButton);
+
+          copyButton.addEventListener('click', () => {
+            const tempTextarea = document.createElement('textarea');
+            tempTextarea.value = codeBlock.textContent;
+            document.body.appendChild(tempTextarea);
+            tempTextarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempTextarea);
+
+            copyButton.textContent = 'Copied!';
+            setTimeout(() => {
+              copyButton.textContent = 'Copy';
+            }, 1500);
+          });
+        });
+      })
+      .catch(error => {
+        console.error('Error loading Markdown file:', error);
+      });
+      
+  </script>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src data:; connect-src 'self'">
+</html>

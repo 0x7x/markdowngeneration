@@ -1,0 +1,62 @@
+
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <title>Index of public</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter&display=swap">
+    <link rel="stylesheet" type="text/css" href="/../index.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  </head>
+  <block class="block">
+    <h4><a href="/../public">Home 📁</a></h4>
+    <h4 id="directory-path"></h4>
+    <h4>Settings ⚙️</h4>
+  </block>
+  <script>
+
+    path = window.location.pathname;
+    cleanPath = decodeURI(path)
+    console.log(cleanPath)
+    console.log(path)
+    var pathClean = cleanPath.replace('/*/', ' ')
+    var pageName = path.split('/').pop().replace('.html', ''); // Assuming the file extension is ".md"
+    var pageNameClean = decodeURI(path.split('/').pop().replace('.html', '')); // Assuming the file extension is ".md"
+    // Set the page title and display the title within the content
+    console.log(pageName)
+    console.log(pathClean)
+    document.title = cleanPath;
+    //document.getElementById('markdown-content').innerHTML = '<h1 class="x1">' + 'Markdown Viewer' + '</x1>';
+    var segments = cleanPath.split('/').filter(Boolean); // Split the path and remove empty segments
+
+// Create an anchor element for each path segment
+var directoryLinks = [];
+var fullPath = '';
+for (var i = 0; i < segments.length; i++) {
+  fullPath += '/' + segments[i];
+  var segmentLink = document.createElement('a');
+  segmentLink.textContent = segments[i];
+  segmentLink.href = fullPath;
+  directoryLinks.push(segmentLink);
+}
+
+// Set the text content and links for each path segment
+var directoryPathElement = document.getElementById('directory-path');
+directoryLinks.forEach(function(link, index) {
+  directoryPathElement.appendChild(link);
+  if (index < segments.length - 1) {
+    directoryPathElement.appendChild(document.createTextNode('/'));
+  }
+});
+   
+      
+  </script>
+  <body>
+    <div id="markdown-content" class="markdown-content">
+    <h1 class="x1">public</h1>
+      <ul><li><a href="Readme.html">Readme.html</a></li><li><a href="claire.html">claire.html</a></li><li><a href="meow.html">meow.html</a></li><li><a href="testing.html">testing.html</a></li>
+      </ul>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/marked@2.0.0/marked.min.js"></script>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src data:; connect-src 'self'">
+  </body>
+  </html>
